@@ -7,8 +7,8 @@ const Query = {
 };
 
 const Mutation = {
-  createJob: (root, {companyId, title, description}) => db.jobs.create(
-      {companyId, title, description}),
+  createJob: (root, {companyId, title, description}) => db.jobs.get(db.jobs.create(
+      {companyId, title, description})),
 };
 
 const Company = {
