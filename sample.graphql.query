@@ -1,0 +1,40 @@
+query($jobId: ID!, $companyId: ID!) {
+  # get company by id with jobs nested
+  company(id: $companyId) {
+    id
+    name
+    description
+    jobs {
+      id
+      title
+    }
+  }
+  # get job by id
+  job(id: $jobId) {
+    id
+    title
+    company {
+      id
+      name
+      description
+    }
+    description
+  }
+  # get jobs
+  jobs {
+    id
+    title
+    company {
+      id
+      name
+      description
+    }
+    description
+  }
+}
+
+# variables
+{
+  "jobId": "rkz1GwOOM",
+  "companyId": "HJRa-DOuG"
+}
